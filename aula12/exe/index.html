@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="carregar()">
+    <header><h1>Título</h1></header>
+    <section>
+        <div id="data">Test</div>
+        <div id="img">
+            <img src="" alt="fotomanha" id="imagem">
+            <img src="" alt="fototarde">
+            <img src="" alt="fotonoite">
+        </div>
+    </section>
+    <footer> Cirilo©</footer>
+</body>
+</html>
+<style>
+    body {
+        background-color: rgb(27, 105, 200);
+        font: normal 15pt Arial;
+
+    }
+
+    header {
+        color: white;
+        text-align: center;
+    }
+
+    section {
+        background-color: white;
+        border-radius: 10px;
+        padding: 15px;
+        width: 500px;
+        margin: auto;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.46);
+    }
+
+    #img {
+        width: 500px;
+        height: 500px;
+    }
+
+    footer {
+        color: white;
+        text-align: center;
+        font-style: italic;
+    }
+</style>
+<script>
+function carregar(){
+ var msg = window.document.getElementById('data')
+ var img = window.document.getElementById('imagem')
+ var data = new Date()
+ var hora = data.getHours()
+ msg.innerHTML = `Agora são ${hora} horas`
+ if (hora >= 0 && hora <= 12) {
+    // BOM DIA
+    img.src = 'https://www.horadecodar.com.br//wp-content/uploads/2019/07/imagem_redonda_com_css_exemplo.png.png'
+    document.body.style.background = '#fbdcae'
+} else if (hora >= 12 && hora < 18) {
+    // BOA TARDE
+    img.src = 'https://data.pixiz.com/output/user/frame/preview/400x400/6/7/3/5/2345376_b3a33.jpg'
+    document.body.style.background = '#f3bf70'
+} else {
+    // BOA NOITE
+    img.src = 'https://www.pngkey.com/png/full/826-8264326_grover-nota-redonda-png.png'
+    document.body.style.background = '#040139'
+}
+}
+</script>
